@@ -53,7 +53,7 @@ export default function Slider() {
     <div
       className={`transition duration-500 ${
         darkMode ? "dark" : ""
-      } dark:bg-[#251819]`}
+      } dark:bg-[#251819] z-0`}
     >
       <section className="text-center">
         <h2 className="font-semibold text-2xl m-[5rem] dark:text-[#F3F2F2]">

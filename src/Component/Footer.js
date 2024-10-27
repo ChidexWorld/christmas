@@ -9,7 +9,7 @@ function Footer() {
     <footer
       className={`flex flex-col items-center transition duration-500 relative ${
         darkMode ? "dark" : ""
-      } dark:bg-[#251819]`}
+      } dark:bg-[#251819] z-0`}
       style={{ overflow: "hidden" }}
     >
       <section className="flex items-start w-[80%] flex-col sm:flex-row sm:justify-between sm:flex-wrap m-[4rem] gap-[1rem]">

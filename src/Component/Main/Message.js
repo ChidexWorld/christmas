@@ -22,7 +22,7 @@ export default function Message() {
     >
       <section className="bg-[#DC3845] w-[968px] flex rounded-[32px] justify-around items-center flex-wrap p-[1rem] dark:bg-[#2F2223]">
         <form
-          className=" w-[264px] h-[27                                           0px] flex flex-col justify-between sm:h-[300px] sm:justify-around"
+          className=" w-[264px] h-[270px] flex flex-col justify-between sm:h-[300px] sm:justify-around"
           green
           onSubmit={handleSubmit}
         >

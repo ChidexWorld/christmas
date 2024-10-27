@@ -39,9 +39,9 @@ function NavBar() {
     <div
       className={`transition duration-500 ${
         darkMode ? "dark" : ""
-      } pt-[2rem] pb-[3rem]`}
+      } pt-[2rem] pb-[3rem] dark:bg-[#251819]`}
     >
-      <nav className="flex justify-around gap-[3rem] dark:bg-[#251819] dark:text-[#F3F2F2]">
+      <nav className="flex justify-around gap-[3rem] dark:text-[#F3F2F2]">
         <div className="flex items-center">
           <img src="assets/santa-mobile.png" alt="logo" loading="lazy" />
           <h6>Christmas</h6>
@@ -81,7 +81,7 @@ function NavBar() {
         <div
           className={`flex flex-col items-center h-[20rem] rounded-b-[12px] pb-[3rem] justify-between bg-gray-100 fixed w-[100%] top-[0rem] sm:hidden transition-all duration-300  origin-top ${
             isMobileMenuOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"
-          } dark:bg-[#2f2223] dark:text-[#F3F2F2]`}
+          } dark:bg-[#2f2223] dark:text-[#F3F2F2] z-10`}
         >
           <div className="w-[100%] flex items-center justify-between pr-[1.3rem]">
             <img
