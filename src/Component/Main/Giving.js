@@ -43,7 +43,7 @@ function Giving() {
               key={card.id}
               className="card w-[142px] h-[208px] flex flex-col items-center justify-between"
             >
-              <img src={card.imgSrc} alt={card.title} />
+              <img src={card.imgSrc} alt={card.title} loading="lazy" />
 
               <div>
                 <h3 className="font-semibold text-lg text-sm font-normal dark:text-[#F3F2F2]">

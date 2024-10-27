@@ -54,7 +54,7 @@ function Gift() {
             <div
               key={card.id}
               className="card w-[200px] mb-[3rem] rounded-xl flex flex-col items-center justify-between p-4 dark:bg-[#2F2223]"
-              style={ darkMode ? {} :{boxShadow: "2px 0px 20px -5px #301d1e" }}
+              style={darkMode ? {} : { boxShadow: "2px 0px 20px -5px #301d1e" }}
             >
               <div className="flex justify-end w-[150px] ">
                 <FontAwesomeIcon
@@ -63,7 +63,7 @@ function Gift() {
                 />
               </div>
 
-              <img src={card.imgSrc} alt={card.title} />
+              <img src={card.imgSrc} alt={card.title} loading="lazy" />
 
               <div className="text-left w-[150px]">
                 <h3 className="font-semibold text-lg text-sm font-normal dark:text-[#F3F2F2]">

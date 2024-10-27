@@ -33,7 +33,11 @@ function Celebrate() {
             srcSet="assets/fireplace-mobile.png"
             media="(max-width: 640px)"
           />
-          <img src="assets/fireplace-desktop.png" alt="celebration" />
+          <img
+            src="assets/fireplace-desktop.png"
+            alt="celebration"
+            loading="lazy"
+          />
         </picture>
       </section>
     </div>

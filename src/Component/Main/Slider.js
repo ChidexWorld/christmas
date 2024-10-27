@@ -110,6 +110,7 @@ export default function Slider() {
                     src={card.imgSrc}
                     alt={card.nameProduct}
                     className="card-image"
+                    loading="lazy"
                   />
                 </div>
 

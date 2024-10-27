@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../Contexts/ThemeContext";
 
-
 function Header() {
   const { darkMode } = useContext(ThemeContext); //Use context
 
@@ -14,7 +13,7 @@ function Header() {
       <header className="flex flex-col justify-center items-center sm:flex-row sm:flex-wrap">
         <picture>
           <source srcSet="assets/home-mobile.png" media="(max-width: 640px)" />
-          <img src="assets/home-desktop.png" alt="celebration" />
+          <img src="assets/home-desktop.png" alt="celebration" loading="lazy" />
         </picture>
 
         <div className="sm:w-[450px] flex flex-col items-center sm:items-start justify-between mt-[2rem] sm:mt-[0] gap-[2rem]">
