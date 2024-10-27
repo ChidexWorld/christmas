@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ThemeContext } from "../../Contexts/ThemeContext";
 
 function Giving() {
   // Array of data for each card
@@ -23,10 +24,16 @@ function Giving() {
     },
   ];
 
+  const { darkMode } = useContext(ThemeContext); //Use context
+
   return (
-    <div>
+    <div
+      className={`transition duration-500 ${
+        darkMode ? "dark" : ""
+      } dark:bg-[#251819]`}
+    >
       <section className="w-full text-center flex flex-col items-center h-[27.5re] justify-around">
-        <h2 className="font-semibold text-2xl w-[205px] m-[4rem]">
+        <h2 className="font-semibold text-2xl w-[205px] m-[4rem] dark:text-[#F3F2F2]">
           Start Giving This Christmas
         </h2>
 
@@ -39,10 +46,12 @@ function Giving() {
               <img src={card.imgSrc} alt={card.title} />
 
               <div>
-                <h3 className="font-semibold text-lg text-sm font-normal">
+                <h3 className="font-semibold text-lg text-sm font-normal dark:text-[#F3F2F2]">
                   {card.title}
                 </h3>
-                <p className="font-normal text-sm">{card.description}</p>
+                <p className="font-normal text-sm dark:text-[#C2BDBD]">
+                  {card.description}
+                </p>
               </div>
             </div>
           ))}

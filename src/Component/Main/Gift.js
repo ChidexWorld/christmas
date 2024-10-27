@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ThemeContext } from "../../Contexts/ThemeContext";
 
 function Gift() {
-
   const cards = [
     {
       id: 1,
@@ -36,10 +36,16 @@ function Gift() {
     },
   ];
 
+  const { darkMode } = useContext(ThemeContext); //Use context
+
   return (
-    <div>
+    <div
+      className={`transition duration-500 ${
+        darkMode ? "dark" : ""
+      } dark:bg-[#251819]`}
+    >
       <section className="text-center flex flex-col items-center  justify-around">
-        <h2 className="font-semibold text-2xl w-[205px] m-[5rem]">
+        <h2 className="font-semibold text-2xl w-[205px] m-[5rem]  dark:text-[#F3F2F2]">
           Share a gift
         </h2>
 
@@ -47,8 +53,8 @@ function Gift() {
           {cards.map((card) => (
             <div
               key={card.id}
-              className="card w-[200px] mb-[3rem] rounded-xl flex flex-col items-center justify-between p-4"
-              style={{ boxShadow: "2px 0px 20px -5px #301d1e" }}
+              className="card w-[200px] mb-[3rem] rounded-xl flex flex-col items-center justify-between p-4 dark:bg-[#2F2223]"
+              style={ darkMode ? {} :{boxShadow: "2px 0px 20px -5px #301d1e" }}
             >
               <div className="flex justify-end w-[150px] ">
                 <FontAwesomeIcon
@@ -60,10 +66,12 @@ function Gift() {
               <img src={card.imgSrc} alt={card.title} />
 
               <div className="text-left w-[150px]">
-                <h3 className="font-semibold text-lg text-sm font-normal">
+                <h3 className="font-semibold text-lg text-sm font-normal dark:text-[#F3F2F2]">
                   ${card.price}
                 </h3>
-                <p className="font-normal text-sm">{card.nameProduct}</p>
+                <p className="font-normal text-sm  dark:text-[#C2BDBD]">
+                  {card.nameProduct}
+                </p>
               </div>
             </div>
           ))}

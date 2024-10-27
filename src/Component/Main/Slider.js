@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { ThemeContext } from "../../Contexts/ThemeContext";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,6 +14,8 @@ import "swiper/css/pagination";
 import { FreeMode, Pagination } from "swiper/modules";
 
 export default function Slider() {
+  const { darkMode } = useContext(ThemeContext); //Use context
+
   const cards = [
     {
       id: 1,
@@ -47,9 +50,15 @@ export default function Slider() {
   ];
 
   return (
-    <>
+    <div
+      className={`transition duration-500 ${
+        darkMode ? "dark" : ""
+      } dark:bg-[#251819]`}
+    >
       <section className="text-center">
-        <h2 className="font-semibold text-2xl m-[5rem]">Share a gift</h2>
+        <h2 className="font-semibold text-2xl m-[5rem] dark:text-[#F3F2F2]">
+          Share a gift
+        </h2>
 
         <Swiper
           slidesPerView={3}
@@ -82,10 +91,12 @@ export default function Slider() {
           <div className="card-container ">
             {cards.map((card, i) => (
               <SwiperSlide
-                className="card"
+                className="card dark:bg-[#2F2223]"
                 key={i}
                 style={{
-                  boxShadow: "2px 0px 20px -5px #301d1e",
+                  ...(darkMode
+                    ? {}
+                    : { boxShadow: "2px 0px 20px -5px #301d1e" }), // Conditional shadow
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
@@ -103,10 +114,12 @@ export default function Slider() {
                 </div>
 
                 <div className="w-[100%]">
-                  <h3 className="card-title font-semibold text-lg text-sm font-normal">
+                  <h3 className="card-title font-semibold text-lg text-sm font-normal dark:text-[#F3F2F2]">
                     ${card.price}
                   </h3>
-                  <p className="card-description">{card.nameProduct}</p>
+                  <p className="card-description dark:text-[#C2BDBD]">
+                    {card.nameProduct}
+                  </p>
                   <div className="flex justify-end rounded-br-x">
                     <FontAwesomeIcon
                       icon="fa-regular fa-heart"
@@ -120,6 +133,6 @@ export default function Slider() {
           </div>
         </Swiper>
       </section>
-    </>
+    </div>
   );
 }

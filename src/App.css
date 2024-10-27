@@ -6,13 +6,8 @@ body {
   color: #282525;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  border: solid red;
   overflow-x: hidden;
   width: 100%;
-}
-
-nav {
-  border: solid;
 }
 
 p {

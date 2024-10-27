@@ -10,6 +10,7 @@ import NavBar from "./Component/NavBar";
 import Slider from "./Component/Main/Slider";
 import Message from "./Component/Main/Message";
 import Footer from "./Component/Footer";
+import { ThemeProvider, ThemeContext } from "./Contexts/ThemeContext";
 
 library.add(far);
 
@@ -17,19 +18,31 @@ library.add(far);
 library.add(fas);
 
 function App() {
+  // const { darkMode } = useContext(ThemeContext); //Use context
+
   return (
-    <div className="App">
-      <NavBar />
-      <Header />
-      <main>
-        <Giving />
-        <Celebrate />
-        <Gift></Gift>
-        <Slider></Slider>
-        <Message></Message>
-      </main>
-      <Footer></Footer>
-    </div>
+    
+      <ThemeProvider>
+         <ThemeContext.Consumer>
+        {({ darkMode }) => ( // Use ThemeContext Consumer to access darkMode
+          <div
+            className={`App transition duration-500 ${darkMode ? "dark" : ""} dark:bg-[#251819]`}
+          >
+          <NavBar />
+          <Header />
+          <main>
+            <Giving />
+            <Celebrate />
+            <Gift></Gift>
+            <Slider></Slider>
+            <Message></Message>
+          </main>
+          <Footer></Footer>
+        </div>
+        )}
+        </ThemeContext.Consumer>
+      </ThemeProvider>
+    
   );
 }
 
